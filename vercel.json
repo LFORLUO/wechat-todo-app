@@ -1,15 +1,9 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/index.py", "use": "@vercel/python" }
+    { "src": "api/check_todos.py", "use": "@vercel/python" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "api/index.py" }
-  ],
-  "crons": [
-    {
-      "path": "/api/check_todos",
-      "schedule": "0 * * * *"
-    }
+    { "src": "/api/check_todos", "dest": "api/check_todos.py" }
   ]
 }
